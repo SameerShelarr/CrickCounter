@@ -1,6 +1,17 @@
 <resources>
-    <string name="app_name">Cricket Score Counter</string>
+    <string name="app_name">CrickCounter</string>
     <string name="team_a">Team A</string>
-    <string name="_0">0</string>
     <string name="slash">/</string>
+    <string name="reset">RESET</string>
+    <string name="_0">0</string>
+    <string name="two_s">Two\'s</string>
+    <string name="four_s">Four\'s</string>
+    <string name="six_s">Six\'s</string>
+    <string name="runs_overview">Runs Overview</string>
+    <string name="wicket_1">Wicket +1</string>
+    <string name="_6_runs">+6 Runs</string>
+    <string name="_4_runs">+4 Runs</string>
+    <string name="_2_runs">+2 Runs</string>
+    <string name="_1_run">+1 Run</string>
+    <string name="team_b">Team B</string>
 </resources>
