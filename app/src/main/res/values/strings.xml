@@ -14,4 +14,5 @@
     <string name="_2_runs">+2 Runs</string>
     <string name="_1_run">+1 Run</string>
     <string name="team_b">Team B</string>
+    <string name="reset_score">Reset score</string>
 </resources>
