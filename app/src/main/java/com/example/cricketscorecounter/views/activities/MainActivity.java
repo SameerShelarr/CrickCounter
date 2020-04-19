@@ -3,6 +3,9 @@ package com.example.cricketscorecounter.views.activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -45,8 +48,12 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         switch (id){
             case R.id.reset_score_menu_item:
-                resetScore();
-                break;
+                if (crickCounterViewModel.runsTeamA == 0 && crickCounterViewModel.runsTeamB == 0 &&
+                crickCounterViewModel.wicketsTeamA == 0 && crickCounterViewModel.wicketsTeamB == 0){
+                    return true;
+                }
+                showResetConfirmationDialog();
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -185,5 +192,25 @@ public class MainActivity extends AppCompatActivity {
         displayFourCounterTeamB(0);
         displayTwoCounterTeamA(0);
         displayTwoCounterTeamB(0);
+    }
+
+    private void showResetConfirmationDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(R.string.reset_score_dialog);
+        builder.setPositiveButton(R.string.reset, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                resetScore();
+            }
+        });
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                if (dialog != null) {
+                    dialog.dismiss();
+                }
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }
