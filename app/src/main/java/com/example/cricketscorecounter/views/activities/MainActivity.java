@@ -13,16 +13,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import com.example.cricketscorecounter.R;
+import com.example.cricketscorecounter.databinding.ActivityMainBinding;
 import com.example.cricketscorecounter.viewmodels.CrickCounterViewModel;
 
 public class MainActivity extends AppCompatActivity {
 
+    private ActivityMainBinding binding;
     private CrickCounterViewModel crickCounterViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
 
         crickCounterViewModel = ViewModelProviders.of(this).get(CrickCounterViewModel.class);
         displayRunsTeamA(crickCounterViewModel.runsTeamA);
@@ -59,55 +63,68 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayRunsTeamA(int i) {
-        TextView textView = findViewById(R.id.runs_team_a);
-        textView.setText(String.valueOf(i));
+        binding.runsTeamA.setText(String.valueOf(i));
     }
 
     public void displayRunsTeamB(int i) {
-        TextView textView = findViewById(R.id.runs_team_b);
-        textView.setText(String.valueOf(i));
+        binding.runsTeamB.setText(String.valueOf(i));
     }
 
     public void displayWicketsTeamA(int i) {
-        TextView textView = findViewById(R.id.wickets_team_a);
-        textView.setText(String.valueOf(i));
+        binding.wicketsTeamA.setText(String.valueOf(i));
     }
 
     public void displayWicketsTeamB(int i) {
-        TextView textView = findViewById(R.id.wickets_team_b);
-        textView.setText(String.valueOf(i));
+        binding.wicketsTeamB.setText(String.valueOf(i));
     }
 
     public void displaySixCounterTeamA(int i) {
-        TextView textView = findViewById(R.id.six_counter_team_a);
-        textView.setText(String.valueOf(i));
+        binding.sixCounterTeamA.setText(String.valueOf(i));
     }
 
     public void displayFourCounterTeamA(int i) {
-        TextView textView = findViewById(R.id.four_counter_team_a);
-        textView.setText(String.valueOf(i));
+        binding.fourCounterTeamA.setText(String.valueOf(i));
     }
 
     public void displayTwoCounterTeamA(int i) {
-        TextView textView = findViewById(R.id.two_counter_team_a);
-        textView.setText(String.valueOf(i));
+        binding.twoCounterTeamA.setText(String.valueOf(i));
+    }
+
+    public void displayNoBallsCounterTeamB(int i){
+
+    }
+
+    public void displayWideBallsCounterTeamB(int i){
+
+    }
+
+    public void displayDotBallsCounterTeamB(int i){
+
     }
 
     public void displaySixCounterTeamB(int i) {
-        TextView textView = findViewById(R.id.six_counter_team_b);
-        textView.setText(String.valueOf(i));
+        binding.sixCounterTeamB.setText(String.valueOf(i));
     }
 
     public void displayFourCounterTeamB(int i) {
-        TextView textView = findViewById(R.id.four_counter_team_b);
-        textView.setText(String.valueOf(i));
+        binding.fourCounterTeamB.setText(String.valueOf(i));
     }
 
     public void displayTwoCounterTeamB(int i) {
-        TextView textView = findViewById(R.id.two_counter_team_b);
-        textView.setText(String.valueOf(i));
+        binding.twoCounterTeamB.setText(String.valueOf(i));
     }
 
+    public void displayNoBallsCounterTeamA(int i){
+
+    }
+
+    public void displayWideBallsCounterTeamA(int i){
+
+    }
+
+    public void displayDotBallsCounterTeamA(int i){
+
+    }
 
     public void addOneTeamA(View view) {
         crickCounterViewModel.runsTeamA = crickCounterViewModel.runsTeamA + 1;
@@ -178,6 +195,40 @@ public class MainActivity extends AppCompatActivity {
             crickCounterViewModel.wicketsTeamB = crickCounterViewModel.wicketsTeamB + 1;
         }
         displayWicketsTeamB(crickCounterViewModel.wicketsTeamB);
+    }
+
+    public void addWideBallTeamA(View view) {
+        crickCounterViewModel.wideBallsTeamA = crickCounterViewModel.wideBallsTeamA + 1;
+        crickCounterViewModel.runsTeamA = crickCounterViewModel.runsTeamA +1;
+        crickCounterViewModel.wideBallsCounterTeamA = crickCounterViewModel.wideBallsCounterTeamA + 1;
+    }
+
+    public void addNoBallTeamA(View view) {
+        crickCounterViewModel.noBallsTeamA = crickCounterViewModel.noBallsTeamA + 1;
+        crickCounterViewModel.runsTeamA = crickCounterViewModel.runsTeamA +1;
+        crickCounterViewModel.noBallsCounterTeamA = crickCounterViewModel.noBallsCounterTeamA + 1;
+    }
+
+    public void addDotBallTeamA(View view) {
+        crickCounterViewModel.dotBallsTeamA = crickCounterViewModel.dotBallsTeamA + 1;
+        crickCounterViewModel.dotBallsCounterTeamA = crickCounterViewModel.dotBallsCounterTeamA + 1;
+    }
+
+    public void addWideBallTeamB(View view) {
+        crickCounterViewModel.wideBallsTeamB = crickCounterViewModel.wideBallsTeamB + 1;
+        crickCounterViewModel.runsTeamB = crickCounterViewModel.runsTeamB +1;
+        crickCounterViewModel.wideBallsCounterTeamB = crickCounterViewModel.wideBallsCounterTeamB + 1;
+    }
+
+    public void addNoBallTeamB(View view) {
+        crickCounterViewModel.noBallsTeamB = crickCounterViewModel.noBallsTeamB + 1;
+        crickCounterViewModel.runsTeamB = crickCounterViewModel.runsTeamB +1;
+        crickCounterViewModel.noBallsCounterTeamB = crickCounterViewModel.noBallsCounterTeamB + 1;
+    }
+
+    public void addDotBallTeamB(View view) {
+        crickCounterViewModel.dotBallsTeamB = crickCounterViewModel.dotBallsTeamB + 1;
+        crickCounterViewModel.dotBallsCounterTeamB = crickCounterViewModel.dotBallsCounterTeamB + 1;
     }
 
     public void resetScore() {

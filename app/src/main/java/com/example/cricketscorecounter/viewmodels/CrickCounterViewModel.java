@@ -12,7 +12,11 @@ public class CrickCounterViewModel extends ViewModel {
     public int fourCounterTeamA = 0;
     public int twoCounterTeamA = 0;
     public int wideBallsTeamA = 0;
+    public int wideBallsCounterTeamA = 0;
     public int noBallsTeamA = 0;
+    public int noBallsCounterTeamA = 0;
+    public int dotBallsTeamA = 0;
+    public int dotBallsCounterTeamA = 0;
     public int requiredRunsTeamA = 0;
     public int ballsRemainingTeamA = 0;
     public double oversTeamA = 0;
@@ -25,7 +29,11 @@ public class CrickCounterViewModel extends ViewModel {
     public int fourCounterTeamB = 0;
     public int twoCounterTeamB = 0;
     public int wideBallsTeamB = 0;
+    public int wideBallsCounterTeamB = 0;
     public int noBallsTeamB = 0;
+    public int noBallsCounterTeamB = 0;
+    public int dotBallsTeamB = 0;
+    public int dotBallsCounterTeamB = 0;
     public int requiredRunsTeamB = 0;
     public int ballsRemainingTeamB = 0;
     public double oversTeamB = 0;
@@ -44,7 +52,11 @@ public class CrickCounterViewModel extends ViewModel {
         fourCounterTeamA = 0;
         twoCounterTeamA = 0;
         wideBallsTeamA = 0;
+        wideBallsCounterTeamA = 0;
         noBallsTeamA = 0;
+        noBallsCounterTeamA = 0;
+        dotBallsTeamA = 0;
+        dotBallsCounterTeamA = 0;
         requiredRunsTeamA = 0;
         ballsRemainingTeamA = 0;
         oversTeamA = 0;
@@ -57,7 +69,11 @@ public class CrickCounterViewModel extends ViewModel {
         fourCounterTeamB = 0;
         twoCounterTeamB = 0;
         wideBallsTeamB = 0;
+        wideBallsCounterTeamB = 0;
         noBallsTeamB = 0;
+        noBallsCounterTeamB = 0;
+        dotBallsTeamB = 0;
+        dotBallsCounterTeamB = 0;
         requiredRunsTeamB = 0;
         ballsRemainingTeamB = 0;
         oversTeamB = 0;
